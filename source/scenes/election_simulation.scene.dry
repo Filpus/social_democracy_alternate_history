@@ -9,72 +9,72 @@ set-jump: post_election
 @1928
 on-arrival: {!
 Q.workers = 46; // industry and trade
-Q.old_middle = 13; // "old mittelstand"
+Q.entrepreneurs = 13; // "old mittelstand"
 // 16.4 trade & commerce, 6.6 public and private services, 4.4 domestic help
-Q.new_middle = 14; // "new mittelstand"
+Q.middle_class = 14; // "new mittelstand"
 Q.rural = 25; // agriculture and forestry employment... but many of those are proletarians so...
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 43, table 3.3
-Q.unemployed = 8.6;
-Q.catholics = 30;
+Q.pensioners = 8.6;
+Q.youth = 30;
 
-Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
+Q.classes = ['workers', 'entrepreneurs', 'middle_class', 'rural', 'pensioners', 'youth'];
+Q.parties = ['ko', 'razem', 'z', 'lewica', 'psl', 'pis', 'konfederacja', 'other'];
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_spd = 65;
-Q.workers_kpd = 20;
-Q.workers_z = 5;
-Q.workers_ddp = 0;
-Q.workers_dvp = 0;
-Q.workers_dnvp = 5;
-Q.workers_nsdap = 0;
+Q.workers_ko = 65;
+Q.workers_razem = 20;
+Q.workers_pl2050= 5;
+Q.workers_lewica = 0;
+Q.workers_psl = 0;
+Q.workers_pis = 5;
+Q.workers_konfederacja = 0;
 Q.workers_other = 10;
 
-Q.old_middle_spd = 5;
-Q.old_middle_kpd = 0;
-Q.old_middle_z = 5;
-Q.old_middle_ddp= 10;
-Q.old_middle_dvp = 25;
-Q.old_middle_dnvp = 25;
-Q.old_middle_nsdap = 10;
-Q.old_middle_other = 10;
+Q.entrepreneurs_ko = 5;
+Q.entrepreneurs_razem = 0;
+Q.entrepreneurs_pl2050= 5;
+Q.entrepreneurs_lewica= 10;
+Q.entrepreneurs_psl = 25;
+Q.entrepreneurs_pis = 25;
+Q.entrepreneurs_konfederacja = 10;
+Q.entrepreneurs_other = 10;
 
-Q.new_middle_spd = 5;
-Q.new_middle_kpd = 0;
-Q.new_middle_z = 10;
-Q.new_middle_ddp= 25;
-Q.new_middle_dvp = 25;
-Q.new_middle_dnvp = 10;
-Q.new_middle_nsdap = 5;
-Q.new_middle_other = 15;
+Q.middle_class_ko = 5;
+Q.middle_class_razem = 0;
+Q.middle_class_pl2050= 10;
+Q.middle_class_lewica= 25;
+Q.middle_class_psl = 25;
+Q.middle_class_pis = 10;
+Q.middle_class_konfederacja = 5;
+Q.middle_class_other = 15;
 
-Q.rural_spd = 10;
-Q.rural_kpd = 0;
-Q.rural_z = 5;
-Q.rural_ddp= 5;
-Q.rural_dvp = 15;
-Q.rural_dnvp = 45;
-Q.rural_nsdap = 5;
+Q.rural_ko = 10;
+Q.rural_razem = 0;
+Q.rural_pl2050= 5;
+Q.rural_lewica= 5;
+Q.rural_psl = 15;
+Q.rural_pis = 45;
+Q.rural_konfederacja = 5;
 Q.rural_other = 10;
 
-Q.unemployed_spd = 25;
-Q.unemployed_kpd = 55;
-Q.unemployed_z = 1;
-Q.unemployed_ddp = 0;
-Q.unemployed_dvp = 0;
-Q.unemployed_dnvp = 5;
-Q.unemployed_nsdap = 15;
-Q.unemployed_other = 9;
+Q.pensioners_ko = 25;
+Q.pensioners_razem = 55;
+Q.pensioners_pl2050= 1;
+Q.pensioners_lewica = 0;
+Q.pensioners_psl = 0;
+Q.pensioners_pis = 5;
+Q.pensioners_konfederacja = 15;
+Q.pensioners_other = 9;
 
-Q.catholics_spd = 15;
-Q.catholics_kpd = 5;
-Q.catholics_z = 50;
-Q.catholics_ddp = 0;
-Q.catholics_dvp = 5;
-Q.catholics_dnvp = 5;
-Q.catholics_nsdap = 0;
-Q.catholics_other = 10;
+Q.youth_ko = 15;
+Q.youth_razem = 5;
+Q.youth_pl2050= 50;
+Q.youth_lewica = 0;
+Q.youth_psl = 5;
+Q.youth_pis = 5;
+Q.youth_konfederacja = 0;
+Q.youth_other = 10;
 !}
 go-to: election_algorithm
 set-jump: post_election
@@ -82,80 +82,80 @@ set-jump: post_election
 @1930
 on-arrival: {!
 Q.workers = 46; // industry and trade
-Q.old_middle = 13; // "old mittelstand"
+Q.entrepreneurs = 13; // "old mittelstand"
 // 16.4 trade & commerce, 6.6 public and private services, 4.4 domestic help
-Q.new_middle = 14; // "new mittelstand"
+Q.middle_class = 14; // "new mittelstand"
 Q.rural = 25; // agriculture and forestry employment... but many of those are proletarians so...
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 43, table 3.3
-Q.unemployed = 20;
-Q.catholics = 30;
+Q.pensioners = 20;
+Q.youth = 30;
 
-Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
+Q.classes = ['workers', 'entrepreneurs', 'middle_class', 'rural', 'pensioners', 'youth'];
+Q.parties = ['ko', 'razem', 'z', 'lewica', 'psl', 'pis', 'konfederacja', 'other'];
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_spd = 60;
-Q.workers_kpd = 20;
-Q.workers_z = 5;
-Q.workers_ddp = 0;
-Q.workers_dvp = 0;
-Q.workers_dnvp = 0;
-Q.workers_nsdap = 10;
+Q.workers_ko = 60;
+Q.workers_razem = 20;
+Q.workers_pl2050= 5;
+Q.workers_lewica = 0;
+Q.workers_psl = 0;
+Q.workers_pis = 0;
+Q.workers_konfederacja = 10;
 Q.workers_other = 15;
 
-Q.old_middle_spd = 5;
-Q.old_middle_kpd = 0;
-Q.old_middle_z = 5;
-Q.old_middle_ddp= 5;
-Q.old_middle_dvp = 10;
-Q.old_middle_dnvp = 20;
-Q.old_middle_nsdap = 30;
-Q.old_middle_other = 15;
+Q.entrepreneurs_ko = 5;
+Q.entrepreneurs_razem = 0;
+Q.entrepreneurs_pl2050= 5;
+Q.entrepreneurs_lewica= 5;
+Q.entrepreneurs_psl = 10;
+Q.entrepreneurs_pis = 20;
+Q.entrepreneurs_konfederacja = 30;
+Q.entrepreneurs_other = 15;
 
-Q.new_middle_spd = 5;
-Q.new_middle_kpd = 0;
-Q.new_middle_z = 5;
-Q.new_middle_ddp = 10;
-Q.new_middle_dvp = 20;
-Q.new_middle_dnvp = 10;
-Q.new_middle_nsdap = 25;
-Q.new_middle_other = 15;
+Q.middle_class_ko = 5;
+Q.middle_class_razem = 0;
+Q.middle_class_pl2050= 5;
+Q.middle_class_lewica = 10;
+Q.middle_class_psl = 20;
+Q.middle_class_pis = 10;
+Q.middle_class_konfederacja = 25;
+Q.middle_class_other = 15;
 
-Q.rural_spd = 5;
-Q.rural_kpd = 0;
-Q.rural_z = 5;
-Q.rural_ddp= 5;
-Q.rural_dvp = 10;
-Q.rural_dnvp = 20;
-Q.rural_nsdap = 25;
+Q.rural_ko = 5;
+Q.rural_razem = 0;
+Q.rural_pl2050= 5;
+Q.rural_lewica= 5;
+Q.rural_psl = 10;
+Q.rural_pis = 20;
+Q.rural_konfederacja = 25;
 Q.rural_other = 15;
 
-Q.unemployed_spd = 20;
-Q.unemployed_kpd = 50;
-Q.unemployed_z = 0;
-Q.unemployed_ddp = 0;
-Q.unemployed_dvp = 0;
-Q.unemployed_dnvp = 5;
-Q.unemployed_nsdap = 25;
-Q.unemployed_other = 5;
+Q.pensioners_ko = 20;
+Q.pensioners_razem = 50;
+Q.pensioners_pl2050= 0;
+Q.pensioners_lewica = 0;
+Q.pensioners_psl = 0;
+Q.pensioners_pis = 5;
+Q.pensioners_konfederacja = 25;
+Q.pensioners_other = 5;
 
-Q.catholics_spd = 10;
-Q.catholics_kpd = 5;
-Q.catholics_z = 50;
-Q.catholics_ddp = 0;
-Q.catholics_dvp = 5;
-Q.catholics_dnvp = 5;
-Q.catholics_nsdap = 10;
-Q.catholics_other = 5;
+Q.youth_ko = 10;
+Q.youth_razem = 5;
+Q.youth_pl2050= 50;
+Q.youth_lewica = 0;
+Q.youth_psl = 5;
+Q.youth_pis = 5;
+Q.youth_konfederacja = 10;
+Q.youth_other = 5;
 
-Q.spd_r = 25;
-Q.kpd_r = 10;
-Q.z_r = 15;
-Q.ddp_r = 10;
-Q.dvp_r = 10;
-Q.dnvp_r = 14;
-Q.nsdap_r = 10;
+Q.ko_r = 25;
+Q.razem_r = 10;
+Q.pl2050_r = 15;
+Q.lewica_r = 10;
+Q.psl_r = 10;
+Q.pis_r = 14;
+Q.konfederacja_r = 10;
 Q.other_r = 5;
 !}
 go-to: election_algorithm
@@ -164,80 +164,80 @@ set-jump: post_election
 @1932
 on-arrival: {!
 Q.workers = 46; // industry and trade
-Q.old_middle = 13; // "old mittelstand"
+Q.entrepreneurs = 13; // "old mittelstand"
 // 16.4 trade & commerce, 6.6 public and private services, 4.4 domestic help
-Q.new_middle = 14; // "new mittelstand"
+Q.middle_class = 14; // "new mittelstand"
 Q.rural = 25; // agriculture and forestry employment... but many of those are proletarians so...
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 43, table 3.3
-Q.unemployed = 33;
-Q.catholics = 30;
+Q.pensioners = 33;
+Q.youth = 30;
 
-Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
+Q.classes = ['workers', 'entrepreneurs', 'middle_class', 'rural', 'pensioners', 'youth'];
+Q.parties = ['ko', 'razem', 'z', 'lewica', 'psl', 'pis', 'konfederacja', 'other'];
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_spd = 55;
-Q.workers_kpd = 20;
-Q.workers_z = 5;
-Q.workers_ddp = 0;
-Q.workers_dvp = 0;
-Q.workers_dnvp = 0;
-Q.workers_nsdap = 15;
+Q.workers_ko = 55;
+Q.workers_razem = 20;
+Q.workers_pl2050= 5;
+Q.workers_lewica = 0;
+Q.workers_psl = 0;
+Q.workers_pis = 0;
+Q.workers_konfederacja = 15;
 Q.workers_other = 5;
 
-Q.old_middle_spd = 0;
-Q.old_middle_kpd = 0;
-Q.old_middle_z = 5;
-Q.old_middle_ddp = 4;
-Q.old_middle_dvp = 4;
-Q.old_middle_dnvp = 15;
-Q.old_middle_nsdap = 70;
-Q.old_middle_other = 5;
+Q.entrepreneurs_ko = 0;
+Q.entrepreneurs_razem = 0;
+Q.entrepreneurs_pl2050= 5;
+Q.entrepreneurs_lewica = 4;
+Q.entrepreneurs_psl = 4;
+Q.entrepreneurs_pis = 15;
+Q.entrepreneurs_konfederacja = 70;
+Q.entrepreneurs_other = 5;
 
-Q.new_middle_spd = 5;
-Q.new_middle_kpd = 0;
-Q.new_middle_z = 5;
-Q.new_middle_ddp = 10;
-Q.new_middle_dvp = 10;
-Q.new_middle_dnvp = 10;
-Q.new_middle_nsdap = 60;
-Q.new_middle_other = 5;
+Q.middle_class_ko = 5;
+Q.middle_class_razem = 0;
+Q.middle_class_pl2050= 5;
+Q.middle_class_lewica = 10;
+Q.middle_class_psl = 10;
+Q.middle_class_pis = 10;
+Q.middle_class_konfederacja = 60;
+Q.middle_class_other = 5;
 
-Q.rural_spd = 0;
-Q.rural_kpd = 0;
-Q.rural_z = 5;
-Q.rural_ddp = 0;
-Q.rural_dvp = 5;
-Q.rural_dnvp = 15;
-Q.rural_nsdap = 65;
+Q.rural_ko = 0;
+Q.rural_razem = 0;
+Q.rural_pl2050= 5;
+Q.rural_lewica = 0;
+Q.rural_psl = 5;
+Q.rural_pis = 15;
+Q.rural_konfederacja = 65;
 Q.rural_other = 5;
 
-Q.unemployed_spd = 20;
-Q.unemployed_kpd = 40;
-Q.unemployed_z = 0;
-Q.unemployed_ddp = 0;
-Q.unemployed_dvp = 0;
-Q.unemployed_dnvp = 0;
-Q.unemployed_nsdap = 50;
-Q.unemployed_other = 5;
+Q.pensioners_ko = 20;
+Q.pensioners_razem = 40;
+Q.pensioners_pl2050= 0;
+Q.pensioners_lewica = 0;
+Q.pensioners_psl = 0;
+Q.pensioners_pis = 0;
+Q.pensioners_konfederacja = 50;
+Q.pensioners_other = 5;
 
-Q.catholics_spd = 10;
-Q.catholics_kpd = 5;
-Q.catholics_z = 60;
-Q.catholics_ddp = 0;
-Q.catholics_dvp = 5;
-Q.catholics_dnvp = 5;
-Q.catholics_nsdap = 10;
-Q.catholics_other = 5;
+Q.youth_ko = 10;
+Q.youth_razem = 5;
+Q.youth_pl2050= 60;
+Q.youth_lewica = 0;
+Q.youth_psl = 5;
+Q.youth_pis = 5;
+Q.youth_konfederacja = 10;
+Q.youth_other = 5;
 
-Q.spd_r = 25;
-Q.kpd_r = 10;
-Q.z_r = 15;
-Q.ddp_r = 10;
-Q.dvp_r = 10;
-Q.dnvp_r = 14;
-Q.nsdap_r = 10;
+Q.ko_r = 25;
+Q.razem_r = 10;
+Q.pl2050_r = 15;
+Q.lewica_r = 10;
+Q.psl_r = 10;
+Q.pis_r = 14;
+Q.konfederacja_r = 10;
 Q.other_r = 5;
 !}
 go-to: election_algorithm
@@ -246,37 +246,37 @@ set-jump: post_election
 @post_election
 on-arrival: {!
 // set congress proportion to votes
-Q.spd_r = Q.spd_votes;
-Q.z_r = Q.z_votes;
-Q.kpd_r = Q.kpd_votes;
-Q.ddp_r = Q.ddp_votes;
-Q.dvp_r = Q.dvp_votes;
-Q.dnvp_r = Q.dnvp_votes;
-Q.nsdap_r = Q.nsdap_votes;
+Q.ko_r = Q.ko_votes;
+Q.pl2050_r = Q.pl2050_votes;
+Q.razem_r = Q.razem_votes;
+Q.lewica_r = Q.lewica_votes;
+Q.psl_r = Q.psl_votes;
+Q.pis_r = Q.pis_votes;
+Q.konfederacja_r = Q.konfederacja_votes;
 Q.other_r = Q.other_votes;
 
-// The largest party can only be the NSDAP or the SPD.
+// The largest party can only be the Konfederacja or the SPD.
 Q.largest_party = 'SPD';
-if (Q.nsdap_r >= Q.spd_r && Q.nsdap_r >= Q.kpd_r) {
-    Q.largest_party = 'NSDAP';
+if (Q.konfederacja_r >= Q.ko_r && Q.konfederacja_r >= Q.razem_r) {
+    Q.largest_party = 'Konfederacja';
 }
-if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r) {
+if (Q.razem_r >= Q.ko_r && Q.razem_r >= Q.konfederacja_r) {
     Q.largest_party = 'KPD';
 }
 
 // coalitions
-Q.weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r - 3;
-Q.grand_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r;
-Q.bourgeois_coalition = Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
-Q.center_right_coalition = Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
-Q.right_coalition = Q.z_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
-Q.far_right_coalition = Q.dnvp_r + Q.nsdap_r;
-Q.left_coalition = Q.spd_r + Q.kpd_r;
+Q.weimar_coalition = Q.ko_r + Q.lewica_r + Q.pl2050_r - 3;
+Q.grand_coalition = Q.ko_r + Q.lewica_r + Q.pl2050_r + Q.psl_r;
+Q.bourgeois_coalition = Q.lewica_r + Q.pl2050_r + Q.psl_r + Q.other_r;
+Q.center_right_coalition = Q.pl2050_r + Q.lewica_r + Q.psl_r + Q.other_r + Q.pis_r;
+Q.right_coalition = Q.pl2050_r + Q.psl_r + Q.other_r + Q.pis_r;
+Q.far_right_coalition = Q.pis_r + Q.konfederacja_r;
+Q.progressives_coalition = Q.ko_r + Q.razem_r;
 // this is an absurd concept lol
-Q.united_front_coalition = Q.spd_r + Q.kpd_r + Q.z_r + Q.ddp_r - 3;
-Q.anti_democratic_coalition = Q.kpd_r + Q.nsdap_r;
-// aka everyone except nazi, kpd, dnvp
-Q.neo_weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
+Q.united_front_coalition = Q.ko_r + Q.razem_r + Q.pl2050_r + Q.lewica_r - 3;
+Q.anti_democratic_coalition = Q.razem_r + Q.konfederacja_r;
+// aka everyone except nazi, razem, pis
+Q.neo_weimar_coalition = Q.ko_r + Q.lewica_r + Q.pl2050_r + Q.psl_r + Q.other_r;
 !}
 
 The electoral system is essentially proportional, with the proportion of Reichstag seats roughly equal to the proportion of votes.
@@ -284,25 +284,25 @@ The electoral system is essentially proportional, with the proportion of Reichst
 **Election results:**
 
 # 1928: 30, 1930: 25, 1932: 22
-SPD: [+ spd_r +]
+SPD: [+ ko_r +]
 
 # 1928: 15, 1930: 15, 1932: 
-Z + BVP: [+ z_r +]
+Z + BVP: [+ pl2050_r +]
 
 # 1928: 10, 1930: 13
-KPD: [+ kpd_r +]
+KPD: [+ razem_r +]
 
 # 1928: 5, 1930: 4 (as DstP)
-DDP: [+ ddp_r +]
+DDP: [+ lewica_r +]
 
 # 1928: 9, 1930: 5
-DVP: [+ dvp_r +]
+DVP: [+ psl_r +]
 
 # 1928: 14, 1930: 7
-DNVP: [+ dnvp_r +]
+PiS: [+ pis_r +]
 
 # 1928: 3, 1930: 18
-NSDAP: [+ nsdap_r +]
+Konfederacja: [+ konfederacja_r +]
 
 # 1928: 9, 1930: 10
 Other: [+ other_r +]
@@ -315,5 +315,5 @@ Grand Coalition (SPD + Z + BVP + DDP + DVP): [+ grand_coalition +]
 
 Bourgeois Coalition (Z + BVP + DDP + DVP + Others): [+ bourgeois_coalition +]
 
-Right-wing Coalition (Z + BVP + DVP + Others + DNVP): [+ right_coalition +]
+Right-wing Coalition (Z + BVP + DVP + Others + PiS): [+ right_coalition +]
 

@@ -55,7 +55,7 @@ The SPD raises its resources to provide arms and volunteers for the SDAPÖ.
 
 @support_sdapo_govt
 title: The Foreign Ministry will support the democratic Austrian forces.
-view-if: spd_in_government and foreign_minister_party = "SPD"
+view-if: ko_in_government and foreign_minister_party = "SPD"
 on-arrival: sdapo_strength += 1
 go-to: sdapo_victory if sdapo_strength >= 6; long_war_2 if sdapo_strength < 6
 
@@ -63,7 +63,7 @@ We provide diplomatic and some financial and material support to the SDAPÖ forc
 
 @force_peace
 title: Can we bring the sides together for a peace?
-view-if: spd_in_government and foreign_minister_party = "SPD" and sdapo_strength = 5
+view-if: ko_in_government and foreign_minister_party = "SPD" and sdapo_strength = 5
 on-arrival: austria_peace = 1; pro_republic += 3; coup_progress -= 1
 achievement: arbeiter_von_wien
 
@@ -73,7 +73,7 @@ Given the SDAPÖ's starting position, this is treated as a victory. Now begins t
 
 @long_war_2
 title: There is nothing we can do.
-on-arrival: z_relation -= 6; dvp_relation -= 6; ddp_relation -= 3; catholics_spd -= 5; old_middle_spd -= 5; coalition_dissent += 1; economic_growth -= 0.5
+on-arrival: pl2050_relation -= 6; psl_relation -= 6; lewica_relation -= 3; youth_ko -= 5; entrepreneurs_ko -= 5; coalition_dissent += 1; economic_growth -= 0.5
 
 No matter our efforts, the war continues. Too many lives are extinguished. Refugees begin to flow into Germany, and trade suffers. Many are calling our Austrian interference a mistake.
 

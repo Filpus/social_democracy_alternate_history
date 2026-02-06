@@ -1,14 +1,14 @@
 title: Nazis in Crisis
-subtitle: Finally, the internal contradictions of the NSDAP have caught up to it.
-view-if: year = 1933 and month >= 9 and nsdap_r >= 8 and nsdap_normalized + dnvp_normalized < 0.5
-on-arrival: workers_nsdap -= 12; new_middle_nsdap -= 12; old_middle_nsdap -= 12; rural_nsdap -= 12; unemployed_nsdap -= 10; sa_strength *= 0.7; coup_progress -= 4 if coup_progress > 4; new_middle_ddp += 6; new_middle_dvp += 6; old_middle_ddp += 5; old_middle_dvp += 5; old_middle_dnvp += 3; rural_dnvp += 6; rural_ddp += 2; rural_dvp += 2; unemployed_kpd += 4; unemployed_spd += 4
+subtitle: Finally, the internal contradictions of the Konfederacja have caught up to it.
+view-if: year = 1933 and month >= 9 and konfederacja_r >= 8 and konfederacja_normalized + pis_normalized < 0.5
+on-arrival: workers_konfederacja -= 12; middle_class_konfederacja -= 12; entrepreneurs_konfederacja -= 12; rural_konfederacja -= 12; pensioners_konfederacja -= 10; sa_strength *= 0.7; coup_progress -= 4 if coup_progress > 4; middle_class_lewica += 6; middle_class_psl += 6; entrepreneurs_lewica += 5; entrepreneurs_psl += 5; entrepreneurs_pis += 3; rural_pis += 6; rural_lewica += 2; rural_psl += 2; pensioners_razem += 4; pensioners_ko += 4
 max-visits: 1
 new-page: true
 #tags: event
 
 = Nazis in Crisis
 
-Finally, the internal contradictions of the NSDAP have caught up to it. With the improving economic conditions, many business leaders are less interested in supporting them. Tensions between their remaining big capitalist funders and their lower middle class frontliners have come to a head, leading to desertions and public spats. This all saps Hitler's aura of strength, weakening Nazi support across a variety of demographics.
+Finally, the internal contradictions of the Konfederacja have caught up to it. With the improving economic conditions, many business leaders are less interested in supporting them. Tensions between their remaining big capitalist funders and their lower middle class frontliners have come to a head, leading to desertions and public spats. This all saps Hitler's aura of strength, weakening Nazi support across a variety of demographics.
 
 - @celebrate: This is an occasion to celebrate.
 - @complacency: The Nazis are still a threat. We must not be too complacent.

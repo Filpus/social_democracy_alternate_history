@@ -8,8 +8,8 @@ Q.game_over = 1;
 // Eiserne Front - Form the Iron Front.
 this.achieve('game_completed');
 
-// Roter Zar von Preußen - At the end of the game, Otto Braun is president, chancellor, and minister-president of prussia at the same time.
-if (Q.president == 'Braun' && Q.chancellor == 'Braun' && Q.spd_prussia) {
+// Roter Zar von Preußen - At the end of the game, Otto Braun is president, prime_minister, and minister-president of prussia at the same time.
+if (Q.president == 'Braun' && Q.prime_minister == 'Braun' && Q.ko_prussia) {
     this.achieve('red_tzar_of_prussia');
 }
 // Bürgerkrieg - enter a long civil war.
@@ -31,7 +31,7 @@ if (Q.republic_victory) {
 // Verfassungskoalition - form a Constitutional Coalition.
 // Wirtschaftspolitik - enact an economic plan.
 // Wirtschaftswunder - reduce unemployment below 10% and have a non-negative budget by 1933.
-if (Q.year >= 1932  && Q.unemployed < 8.6 && Q.budget > 0 && Q.inflation < 5) {
+if (Q.year >= 1932  && Q.pensioners < 8.6 && Q.budget > 0 && Q.inflation < 5) {
     this.achieve('wirtschaftswunder');
 }
 // Bollwerk der Demokratie - resist the Prussian Coup, and win.
@@ -50,8 +50,8 @@ if ((Q.womens_work && Q.womens_rights >= 5) || (Q.abortion_rights && Q.womens_ri
     this.achieve('equality');
 }
 
-// Sohn seiner Klasse - elect Ernst Thälmann as president or chancellor.
-if (Q.chancellor == "Thälmann" || Q.president == "Thälmann") {
+// Sohn seiner Klasse - elect Ernst Thälmann as president or prime_minister.
+if (Q.prime_minister == "Thälmann" || Q.president == "Thälmann") {
     this.achieve('sohn_seiner_klasse');
 }
 
@@ -72,28 +72,28 @@ for (var c of Q.classes) {
 // Die Rote Fahne - join the KPD in the May Day march.
 // Mehrheitspartei - form an SPD majority government in the Reichstag.
 // Panik im Mittelstand - have over 50% of New Middle Class support.
-if (Q.new_middle_spd_normalized && Q.new_middle_spd_normalized >= 50) {
+if (Q.middle_class_ko_normalized && Q.middle_class_ko_normalized >= 50) {
     this.achieve('panik_im_mittelstand');
 }
 // Bauernrevolution - have over 50% rural support.
-if (Q.rural_spd_normalized && Q.rural_spd_normalized >= 50) {
+if (Q.rural_ko_normalized && Q.rural_ko_normalized >= 50) {
     this.achieve('bauernrevolution');
 }
-if (Q.catholics_spd_normalized && Q.catholics_spd_normalized >= 50) {
+if (Q.youth_ko_normalized && Q.youth_ko_normalized >= 50) {
     this.achieve('katholischer_sozialismus');
 }
-if (Q.workers_spd_normalized >= 80 && Q.new_middle_spd_normalized <= 20 && Q.old_middle_spd_normalized <= 20 && Q.rural_spd_normalized <= 20) {
+if (Q.workers_ko_normalized >= 80 && Q.middle_class_ko_normalized <= 20 && Q.entrepreneurs_ko_normalized <= 20 && Q.rural_ko_normalized <= 20) {
     this.achieve('klassenkampf');
 }
-if (Q.workers_spd_normalized >= 40 && Q.new_middle_spd_normalized >= 40 && Q.old_middle_spd_normalized >= 40 && Q.rural_spd_normalized >= 40) {
+if (Q.workers_ko_normalized >= 40 && Q.middle_class_ko_normalized >= 40 && Q.entrepreneurs_ko_normalized >= 40 && Q.rural_ko_normalized >= 40) {
     this.achieve('grosse_volkspartei');
 }
 // Räterepublik - begin the transformation to a socialist economy.
-if (Q.spd_in_government && ((Q.nationalization_progress >= 2 && Q.economic_democracy >= 3) || (Q.nationalization_progress >= 1 && Q.economic_democracy >= 4))) {
+if (Q.ko_in_government && ((Q.nationalization_progress >= 2 && Q.economic_democracy >= 3) || (Q.nationalization_progress >= 1 && Q.economic_democracy >= 4))) {
     this.achieve('raterepublik');
 }
 // Polykrise - survive both a fascist coup and a capital strike.
-if (Q.march_on_berlin_seen && Q.capital_strike_seen && Q.chancellor != "Hitler" && Q.president != "Hitler" && !Q.total_defeat) {
+if (Q.march_on_berlin_seen && Q.capital_strike_seen && Q.prime_minister != "Hitler" && Q.president != "Hitler" && !Q.total_defeat) {
     this.achieve("polykrise");
 }
 // Wirtschaftsexperiment - implement two different economic plans.
@@ -105,7 +105,7 @@ if (Q.factory_takeovers >= 2) {
     this.achieve("syndikalismus");
 }
 // Stolperstein - lose the civil war against Hitler.
-if ((Q.chancellor_party == "NSDAP" || Q.chancellor == "Hitler" || Q.president == "Hitler") && Q.total_defeat) {
+if ((Q.prime_minister_party == "Konfederacja" || Q.prime_minister == "Hitler" || Q.president == "Hitler") && Q.total_defeat) {
     this.achieve('stolperstein');
 }
 // Heidelberger Programm - fulfill the goals of the Heidelberg programm - increase welfare, reform justice, support women's rights, progressive taxation, works councils, build a European Union.
@@ -124,7 +124,7 @@ if ((Q.welfare > 0 && Q.judicial_reform >= 2 && Q.womens_work >= 1 && Q.family_l
 
 
 @hitler_wins
-view-if: (chancellor == "Hitler" or president == "Hitler") and (total_defeat==1 or civil_war_seen == 0)
+view-if: (prime_minister == "Hitler" or president == "Hitler") and (total_defeat==1 or civil_war_seen == 0)
 title: Adolf Hitler is in undisputed control over Germany.
 tags: endings
 go-to: eg_menu
@@ -134,7 +134,7 @@ Adolf Hitler is in undisputed control over Germany. The SPD, along with all of t
 [? if civil_war_seen == 1 : At the very least, we fought back. Perhaps our resistance will be celebrated in an impossible-to-forsee future. ?]
 
 @war_against_hitler
-view-if: (chancellor == "Hitler" or president == "Hitler") and (long_war == 1)
+view-if: (prime_minister == "Hitler" or president == "Hitler") and (long_war == 1)
 title: Adolf Hitler is in power, but we are fighting to stop him.
 tags: endings
 go-to: eg_menu
@@ -143,22 +143,22 @@ Adolf Hitler has taken power in Germany. However, we have rallied the democratic
 
 
 @no_hitler
-view-if: chancellor != "Hitler" and president != "Hitler" and president != "Göring" and chancellor_party != "NSDAP"
+view-if: prime_minister != "Hitler" and president != "Hitler" and president != "Göring" and prime_minister_party != "Konfederacja"
 title: Hitler does not yet control Germany...
 tags: endings
 go-to: eg_menu
 
-Hitler does not yet control Germany. [? if chancellor == "Papen" : However, Chancellor Papen's authoritarianism and far-right politics are paving the way for Hitler, or someone like him, to take power. ?] [? if chancellor == "Schleicher" : However, Chancellor Schleicher's authoritarianism and scheming is paving the way for Hitler, or someone like him, to take power. ?][? if resist_coup == 1 and republic_victory == 0 and long_war == 0 and coup_victory == 0 : Given our defeat in the Prussian coup, the far-right appears to be ascendant. ?][? if chancellor == "Brüning" : However, Chancellor Brüning's austerity policies and the continuation of the depression are paving the way for Hitler, or someone like him, to take power. ?]
+Hitler does not yet control Germany. [? if prime_minister == "Papen" : However, Chancellor Papen's authoritarianism and far-right politics are paving the way for Hitler, or someone like him, to take power. ?] [? if prime_minister == "Schleicher" : However, Chancellor Schleicher's authoritarianism and scheming is paving the way for Hitler, or someone like him, to take power. ?][? if resist_coup == 1 and republic_victory == 0 and long_war == 0 and coup_victory == 0 : Given our defeat in the Prussian coup, the far-right appears to be ascendant. ?][? if prime_minister == "Brüning" : However, Chancellor Brüning's austerity policies and the continuation of the depression are paving the way for Hitler, or someone like him, to take power. ?]
 
 [? if hitler_deported == 1 : We have deported Hitler back to Austria. Hopefully he will never return. ?]
 
-@nsdap_win
-view-if: chancellor == "Goebbels" or president == "Göring"
+@konfederacja_win
+view-if: prime_minister == "Goebbels" or president == "Göring"
 title: Despite the deportation of Hitler, the Nazis have still taken power...
 tags: endings
 go-to: eg_menu
 
-Despite the deportation of Hitler, the NSDAP has somehow still wormed its way into power. [? if long_war == 1 : We are fighting them for control of Germany. ?]
+Despite the deportation of Hitler, the Konfederacja has somehow still wormed its way into power. [? if long_war == 1 : We are fighting them for control of Germany. ?]
 
 
 @civil_war_won
@@ -222,17 +222,17 @@ Albert Einstein, possibly the most famous scientist in the world, has been elect
 
 
 
-@spd_victorious
+@ko_victorious
 title: SPD still in government
-view-if: spd_in_government == 1 and chancellor_party == "SPD" and total_defeat == 0 and long_war == 0
+view-if: ko_in_government == 1 and prime_minister_party == "SPD" and total_defeat == 0 and long_war == 0
 tags: endings
 go-to: eg_menu
 
-The SPD is still in government, under Chancellor [+ chancellor +]. Given the circumstances, this is a substantial accomplishment.
+The SPD is still in government, under Chancellor [+ prime_minister +]. Given the circumstances, this is a substantial accomplishment.
 
 @communist_victory
 title: Communist victory
-view-if: chancellor_party == "KPD" or president == "Thälmann" and total_defeat == 0 and long_war == 0
+view-if: prime_minister_party == "KPD" or president == "Thälmann" and total_defeat == 0 and long_war == 0
 tags: endings
 go-to: eg_menu
 
@@ -248,7 +248,7 @@ Our government has enacted a public works program!
 
 @unemployment_reduced
 title: Unemployment has been reduced from its peak.
-view-if: unemployed <= 20 and unemployed >= 10 and year >= 1930
+view-if: pensioners <= 20 and pensioners >= 10 and year >= 1930
 tags: endings
 go-to: eg_menu
 
@@ -256,7 +256,7 @@ While still uncomfortably high, unemployment levels are nowhere near their peak.
 
 @unemployment_reduced_2
 title: Unemployment has been successfully reduced!
-view-if: unemployed < 10 and year >= 1930
+view-if: pensioners < 10 and year >= 1930
 tags: endings
 go-to: eg_menu
 
@@ -266,7 +266,7 @@ Unemployment levels have fallen substantially! This is a success of our economic
 
 @unemployment_high
 title: Unemployment is still too high.
-view-if: unemployed >= 20 and (chancellor != "Hitler" and president != "Hitler") and (total_defeat == 0) and long_war == 0
+view-if: pensioners >= 20 and (prime_minister != "Hitler" and president != "Hitler") and (total_defeat == 0) and long_war == 0
 tags: endings
 go-to: eg_menu
 
@@ -279,7 +279,7 @@ view-if: in_emergency_government == 1
 tags: endings
 go-to: eg_menu
 
-The SPD is ruling as part of an emergency minority government, led by President [+ president +] and Chancellor [+ chancellor +]. This is a temporary and unstable arrangement, leaving the door open to further authoritarianism.
+The SPD is ruling as part of an emergency minority government, led by President [+ president +] and Chancellor [+ prime_minister +]. This is a temporary and unstable arrangement, leaving the door open to further authoritarianism.
 
 @peoples_party_achieved
 title: The SPD is a "People's Party".
@@ -332,7 +332,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_einigkeit_und_recht_und_freiheit : **Einigkeit und Recht und Freiheit** - reach the end of the game without a civil war on hard. ?]
 
-[? if game_achievement_schwarz_rot_gold : **Schwarz-Rot-Gold** - reach the end of the game without a civil war on historical mode. ?]
+[? if game_achievement_schwarpl2050_rot_gold : **Schwarz-Rot-Gold** - reach the end of the game without a civil war on historical mode. ?]
 
 [? if game_achievement_victory_for_the_republic: **Sieg für die Republik** - win the civil war. ?]
 
@@ -360,7 +360,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_volkspartei: **Volkspartei** - the SPD is a People's Party. ?]
 
-[? if game_achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either president or chancellor. ?]
+[? if game_achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either president or prime_minister. ?]
 
 [? if game_achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is president. ?]
 
@@ -441,7 +441,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_einigkeit_und_recht_und_freiheit : **Einigkeit und Recht und Freiheit** - reach the end of the game without a civil war on hard. ?]
 
-[? if achievement_schwarz_rot_gold : **Schwarz-Rot-Gold** - reach the end of the game without a civil war on historical mode. ?]
+[? if achievement_schwarpl2050_rot_gold : **Schwarz-Rot-Gold** - reach the end of the game without a civil war on historical mode. ?]
 
 [? if achievement_victory_for_the_republic: **Sieg für die Republik** - win the civil war. ?]
 
@@ -469,7 +469,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_volkspartei: **Volkspartei** - the SPD is a People's Party. ?]
 
-[? if achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either president or chancellor. ?]
+[? if achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either president or prime_minister. ?]
 
 [? if achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is president. ?]
 
@@ -548,7 +548,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_einigkeit_und_recht_und_freiheit : **Einigkeit und Recht und Freiheit** - reach the end of the game without a civil war on hard. ?]
 
-[? if not achievement_schwarz_rot_gold : **Schwarz-Rot-Gold** - reach the end of the game without a civil war on historical mode. ?]
+[? if not achievement_schwarpl2050_rot_gold : **Schwarz-Rot-Gold** - reach the end of the game without a civil war on historical mode. ?]
 
 [? if not achievement_victory_for_the_republic: **Sieg für die Republik** - win the civil war. ?]
 
@@ -576,7 +576,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_volkspartei: **Volkspartei** - the SPD is a People's Party. ?]
 
-[? if not achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either president or chancellor. ?]
+[? if not achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either president or prime_minister. ?]
 
 [? if not achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is president. ?]
 

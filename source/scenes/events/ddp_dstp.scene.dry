@@ -3,7 +3,7 @@ subtitle: The German Democratic Party is becoming the German State Party.
 view-if: year == 1930 and month >= 6
 new-page: true
 max-visits: 1
-on-arrival: ddp_name = "DStP"; ddp_dstp_seen = 1; new_middle_ddp -= 5; old_middle_ddp -= 3; rural_ddp -= 3; ddp_relation -= 5
+on-arrival: lewica_name = "DStP"; lewica_dstp_seen = 1; middle_class_lewica -= 5; entrepreneurs_lewica -= 3; rural_lewica -= 3; lewica_relation -= 5
 tags: event
 
 = DDP Reformation
@@ -16,7 +16,7 @@ This has led to outcry from the left wing of the party, progressives who would r
 - @nothing: This is none of our concern.
 
 @advantage
-on-arrival: new_middle_spd += 5; peoples_party_support += 1; left_dissent += 5; reformist_strength += 3; neorevisionist_strength += 3; reformist_dissent -= 2; neorevisionist_dissent -= 2
+on-arrival: middle_class_ko += 5; peoples_party_support += 1; progressives_dissent += 5; liberals_strength += 3; neorevisionist_strength += 3; liberals_dissent -= 2; neorevisionist_dissent -= 2
 
 With turmoil in the DDP, we have an opportunity to recruit middle-class progressives and portions of the liberal intelligensia into our party. The left of the SPD is opposed to this path, seeing it as diluting the class character of the party. On the other hand, revisionists support this course.
 

@@ -3,7 +3,7 @@ view-if: year = 1931 and month >= 3
 frequency: 1000
 max-visits: 1
 tags: event
-go-to: pm if chancellor = "Müller"; not_pm if chancellor != "Müller"
+go-to: pm if prime_minister = "Müller"; not_pm if prime_minister != "Müller"
 on-arrival: muller_dead = 1; n_advisors -= 1 if muller_advisor == 1; muller_advisor = 0;
 new-page: true
 face-image: img/portraits/MüllerHermann.jpg
@@ -16,40 +16,40 @@ on-arrival: muller_died_in_office = 1
 
 Chancellor Hermann Müller has died while in office. He will be greatly missed. But now, we must select a new Chancellor.
 
-- @braun_chancellor: Otto Braun (SPD) for Chancellor.
-- @wels_chancellor: Otto Wels (SPD) for Chancellor.
-- @breitscheid_chancellor: Rudolf Breitscheid (SPD) for Chancellor.
-- @bruning_chancellor: Let Heinrich Bruning of the Center Party become Chancellor.
-- @wirth_chancellor: Joseph Wirth of the Center Party should be Chancellor.
+- @braun_prime_minister: Otto Braun (SPD) for Chancellor.
+- @wels_prime_minister: Otto Wels (SPD) for Chancellor.
+- @breitscheid_prime_minister: Rudolf Breitscheid (SPD) for Chancellor.
+- @bruning_prime_minister: Let Heinrich Bruning of the Center Party become Chancellor.
+- @wirth_prime_minister: Joseph Wirth of the Center Party should be Chancellor.
 
-@braun_chancellor
-on-arrival: chancellor = "Braun"; chancellor_party = "SPD"; z_relation -= 5; dvp_relation -= 5
+@braun_prime_minister
+on-arrival: prime_minister = "Braun"; prime_minister_party = "SPD"; pl2050_relation -= 5; psl_relation -= 5
 subtitle: The Center Party is worried about having so much power in one man.
 
 Our coalition partners are reluctant to accept the new Chancellor, but they do not make loud objections.
 
 
-@wels_chancellor
-on-arrival: chancellor = "Wels"; chancellor_party = "SPD"; z_relation -= 3; dvp_relation -= 3
-subtitle: He is a good organizer, but is he also a good chancellor?
+@wels_prime_minister
+on-arrival: prime_minister = "Wels"; prime_minister_party = "SPD"; pl2050_relation -= 3; psl_relation -= 3
+subtitle: He is a good organizer, but is he also a good prime_minister?
 
 Our coalition partners are reluctant to accept the new Chancellor, but they do not make loud objections.
 
-@breitscheid_chancellor
-on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD"; z_relation -= 5; dvp_relation -= 5; kpd_relation += 1
+@breitscheid_prime_minister
+on-arrival: prime_minister = "Breitscheid"; prime_minister_party = "SPD"; pl2050_relation -= 5; psl_relation -= 5; razem_relation += 1
 subtitle: The Center Party is worried about his left-leaning tendencies.
 
 Our coalition partners are reluctant to accept the new Chancellor, but they do not make loud objections.
 
-@bruning_chancellor
-on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; z_relation += 5; dvp_relation += 5
+@bruning_prime_minister
+on-arrival: prime_minister = "Brüning"; prime_minister_party = "Z"; pl2050_relation += 5; psl_relation += 5
 subtitle: The Center Party claims it is their turn...
 
 The Center Party is grateful that we have supported Brüning for Chancellor.
 
-@wirth_chancellor
-on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; z_relation += 5; dvp_relation += 2
-view-if: z_party_leader = "Joos"
+@wirth_prime_minister
+on-arrival: prime_minister = "Wirth"; prime_minister_party = "Z"; pl2050_relation += 5; psl_relation += 2
+view-if: pl2050_party_leader = "Joos"
 subtitle: As a moderate member of the Center Party, he could represent unity.
 
 Our coalition partners accept Joseph Wirth of the Center Party as the new Chancellor.

@@ -540,12 +540,12 @@ table {
 .seat.kpd {
     fill: #8B0000;
 }
-.seat.spd {
+.seat.ko {
     fill: #E3000F;
     stroke: var(--border-color);
     stroke-width: 1.5px;
 }
-.seat.ddp {
+.seat.lewica {
     fill: #DCCA4A;
 }
 .seat.z {
@@ -554,16 +554,16 @@ table {
 .seat.bvp {
     fill: #69A2BE;
 }
-.seat.dvp {
+.seat.psl {
     fill: #D5AC27;
 }
 .seat.other {
     fill: #909090;
 }
-.seat.dnvp {
+.seat.pis {
     fill: #3F7BC1;
 }
-.seat.nsdap {
+.seat.konfederacja {
     fill: #954B00;
 }
 .seat.sapd {

@@ -1,0 +1,89 @@
+/* --- PARTY COLORS & TOOLTIPS --- */
+
+/* Mapa kolorów i opisów (Twoje angielskie teksty) */
+$parties: (
+  // PARTIE (Zewnętrzne)
+  'pl2050': (
+    color: #f8c013,
+    desc: "Poland 2050"
+  ),
+  'lewica': (
+    color: #e10914,
+    desc: "Democratic Left Alliance + Spring"
+  ),
+  'psl': (
+    color: #3eb43d,
+    desc: "Polish People's Party"
+  ),
+  'razem': (
+    color: #870f57,
+    desc: "Together"
+  ),
+  'pis': (
+    color: #073a76,
+    desc: "Law and Justice"
+  ),
+  'konfederacja': (
+    color: #122949,
+    desc: "Konfederation"
+  ),
+  
+
+  'progressives': (
+    color: #f9a03a,
+    desc: "Progressives seek bold social reforms: civil partnerships, abortion liberalization, and the separation of Church and State."
+  ),
+  'pragmatists': (
+    color: #f9a03a,
+    desc: "Pragmatists focus on political effectiveness, opposition unity, and ousting PiS from power at all costs."
+  ),
+  'conservatives': (
+    color: #f9a03a,
+    desc: "Conservatives defend traditional values, approach social issues cautiously, and prioritize the interests of the party apparatus."
+  ),
+  'liberals': (
+    color: #f9a03a,
+    desc: "Liberals advocate for a free market, support for entrepreneurs, and fiscal discipline."
+  )
+);
+
+/* Generator klas CSS */
+.party-label {
+  font-weight: 800;
+  cursor: help;
+  position: relative;
+  border-bottom: 1px dotted rgba(0,0,0,0.3);
+  transition: all 0.2s;
+}
+
+@each $key, $data in $parties {
+  .party-#{$key} {
+    @extend .party-label;
+    color: map-get($data, color);
+
+    /* Tooltip (Dymek) */
+    &:hover::after {
+      content: map-get($data, desc); /* Pobiera Twój angielski tekst */
+      
+      position: absolute;
+      bottom: 110%; /* Nad tekstem */
+      left: 50%;
+      transform: translateX(-50%); /* Wyśrodkowanie */
+      
+      width: max-content;
+      max-width: 250px; /* Żeby długie opisy się łamały */
+      
+      background-color: #222;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: normal;
+      white-space: normal; /* Zawijanie tekstu */
+      z-index: 1000;
+      pointer-events: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+  }
+}

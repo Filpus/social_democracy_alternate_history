@@ -1,6 +1,6 @@
 title: Wladimir Woytinsky
 is-pinned-card: true
-tags: advisor, labor
+tags: advisor, conservatives
 card-image: img/portraits/WoytinskyWladimir.jpg
 view-if: woytinsky_advisor = 1
 new-page: true 
@@ -17,16 +17,16 @@ Wladimir Woytinsky is a Russian Menshevik in exile, and the chief economist of t
 @plan
 title: Adopt the WTB-plan!
 subtitle: Convincing the rest of the party to support the WTB-plan.
-choose-if: advisor_action_timer <= 0 and wtb_adopted == 0 and wtb_support >= 3 and black_thursday_seen and (not historical_mode or ((labor_strength >= center_strength) and (labor_strength >= left_strength) and (labor_strength >= reformist_strength)))
+choose-if: advisor_action_timer <= 0 and wtb_adopted == 0 and wtb_support >= 3 and black_thursday_seen and (not historical_mode or ((conservatives_strength >= pragmatists_strength) and (conservatives_strength >= progressives_strength) and (conservatives_strength >= liberals_strength)))
 on-arrival: advisor_action_timer = 6;
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?][? if wtb_support < 3 : There is not enough support for the WTB-Plan. ?][? if (labor_strength < center_strength or labor_strength < left_strength or labor_strength < reformist_strength) and historical_mode : The labor faction is not strong enough. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?][? if wtb_support < 3 : There is not enough support for the WTB-Plan. ?][? if (conservatives_strength < pragmatists_strength or conservatives_strength < progressives_strength or conservatives_strength < liberals_strength) and historical_mode : The conservatives faction is not strong enough. ?]
 go-to: crisis_program.plan_adopted
 
 @carry_out_policy
 title: Carry out the economic plan.
 subtitle: If we are in government, we can carry out a public works program such as the WTB-Plan.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if wtb_adopted == 0 : We have not yet adopted an economic plan. ?][? if spd_in_government == 0 : The SPD is not in government. ?][? if works_program >= 2 : We have already started implementing the plan. ?]
-choose-if: advisor_action_timer <= 0 and wtb_adopted and spd_in_government and wtb_implemented <= 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if wtb_adopted == 0 : We have not yet adopted an economic plan. ?][? if ko_in_government == 0 : The SPD is not in government. ?][? if works_program >= 2 : We have already started implementing the plan. ?]
+choose-if: advisor_action_timer <= 0 and wtb_adopted and ko_in_government and wtb_implemented <= 1
 on-arrival: advisor_action_timer = 6; economic_policy_timer -= 12
 go-to: economic_policy
 
@@ -36,6 +36,6 @@ title: Addressing the economic crisis
 subtitle: Formulate a plan to get us out of the economic crisis.
 choose-if: advisor_action_timer <= 0 and wtb_adopted == 0 and black_thursday_seen == 1 and wtb_support <= 3
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?]
-on-arrival: advisor_action_timer = 6; wtb_support += 2; center_dissent += 10; labor_strength += 1
+on-arrival: advisor_action_timer = 6; wtb_support += 2; pragmatists_dissent += 10; conservatives_strength += 1
 
 The WTB-plan, named for its primary supporters Woytinsky, Tarnow, and Baade, has been adopted as the unions' plan for getting us out of the depression. Woytinsky canvasses in favor of this policy through the SPD and the unions.

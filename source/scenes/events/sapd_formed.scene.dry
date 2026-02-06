@@ -4,12 +4,12 @@ Q.sapd_formed = 1;
 Q.parties.push('sapd');
 
 Q.workers_sapd = 10;
-Q.workers_spd -= 3;
-Q.new_middle_sapd = 1;
-Q.old_middle_sapd = 0;
+Q.workers_ko -= 3;
+Q.middle_class_sapd = 1;
+Q.entrepreneurs_sapd = 0;
 Q.rural_sapd = 0;
-Q.unemployed_sapd = 2;
-Q.catholics_sapd = 0;
+Q.pensioners_sapd = 2;
+Q.youth_sapd = 0;
 
 Q.workers_other -= 5;
 
