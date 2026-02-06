@@ -74,29 +74,28 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Inter-party Relations
 
-{!<span class="party-pl2050">PL2050</span>!}: [+ pl2050_relation : relationships +]
+{!<span class="tooltip-text" style="color: #f8c013;" title="Polska 2050">PL2050</span>!}: [+ pl2050_relation : relationships +]
 
-{!<span class="party-lewica">Democratic Left Alliance + Spring</span>!}: [+ lewica_relation : relationships +]
+{!<span class="tooltip-text" style="color: #e10914;" title="Nowa Lewica (SLD + Wiosna)">[? if not lewica_name: Lewica?][? if lewica_name != 0 : [+ lewica_name +]?]</span>!}: [+ lewica_relation : relationships +]
 
-{!<span class="party-psl">PSL</span>!}: [+ psl_relation : relationships +]
+{!<span class="tooltip-text" style="color: #3eb43d;" title="Polskie Stronnictwo Ludowe">PSL</span>!}: [+ psl_relation : relationships +]
 
-{!<span class="party-razem">Razem</span>!}: [+ razem_relation : relationships +]
+{!<span class="tooltip-text" style="color: #870f57;" title="Partia Razem">Razem</span>!}: [+ razem_relation : relationships +]
 
-{!<span class="party-pis">PiS</span>!}: [+ pis_relation : relationships +]
+{!<span class="tooltip-text" style="color: #073a76;" title="Prawo i Sprawiedliwość">PiS</span>!}: [+ pis_relation : relationships +]
 
-{!<span class="party-konfederacja">Konfederacja</span>!}: [+ konf_relation : relationships +]
+{!<span class="tooltip-text" style="color: #122949;" title="Konfederacja">Konfederacja</span>!}: [+ konfederacja_relation : relationships +]
 
 = Internal Factions of the KO
 
-{!<span class="party-progressives">Progressives</span>!} strength: [+ progressives_strength : strength +], dissent: [+ progressives_dissent : dissent +]
+{!<span class="tooltip-text" title="Progressives seek bold social reforms: civil partnerships, abortion liberalization, and the separation of Church and State.">Progressives</span>!} strength: [+ progressives_strength : strength +], dissent: [+ progressives_dissent : dissent +]
 
-{!<span class="party-pragmatists">Pragmatists</span>!} strength: [+ pragmatists_strength : strength +], dissent: [+ pragmatists_dissent : dissent +]
+{!<span class="tooltip-text" title="Pragmatists focus on political effectiveness, opposition unity, and ousting PiS from power at all costs.">Pragmatists</span>!} strength: [+ pragmatists_strength : strength +], dissent: [+ pragmatists_dissent : dissent +]
 
-{!<span class="party-conservatives">Conservatives</span>!} strength: [+ conservatives_strength : strength +], dissent: [+ conservatives_dissent : dissent +]
-
-{!<span class="party-liberals">Reformist</span>!} strength: [+ liberals_strength : strength +], dissent: [+ liberals_dissent : dissent +]
+{!<span class="tooltip-text" title="Conservatives defend traditional values, approach social issues cautiously, and prioritize the interests of the party apparatus.">Conservatives</span>!} strength: [+ conservatives_strength : strength +], dissent: [+ conservatives_dissent : dissent +]
 
 {!<span class="tooltip-text" title="Liberals advocate for a free market, support for entrepreneurs, and fiscal discipline.">Liberals</span>!} strength: [+ liberals_strength : strength +], dissent: [+ liberals_dissent : dissent +]
+
 [? if neorevisionism > 0 : Neorevisionist strength: [+ neorevisionist_strength : strength +], dissent: [+ neorevisionist_dissent : dissent +] ?]
 
 
@@ -140,9 +139,9 @@ Army: [+ reichswehr_strength +] thousand troops.
 
 Army Loyalty: [+ reichswehr_loyalty : loyalty +]
 
-Prussian police: [+ prussian_police_strength +] thousand members.
+Police: [+ prussian_police_strength +] thousand members.
 
-Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
+Police loyalty: [+ prussian_police_loyalty : loyalty +]
 
 [? if ko_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
 
@@ -157,21 +156,20 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if the election were to be held now):
 
-KO: [+ ko_votes +]%
+{!<span style="color: #f9a03a;">KO</span>!}: [+ ko_votes +]%
 
-[? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
-PL2050: [+ pl2050_votes +]%
+{!<span style="color: #f8c013;">PL2050</span>!}: [+ pl2050_votes +]%
 
-Razem: [+ razem_votes +]%
+{!<span style="color: #870f57;">Razem</span>!}: [+ razem_votes +]%
 
-[? if not lewica_name: DDP?][? if lewica_name != 0 : [+ lewica_name +]?]: [+ lewica_votes +]%
+{!<span style="color: #e10914;">Lewica</span>!}: [+ lewica_votes +]%
 
-PSL: [+ psl_votes +]%
+{!<span style="color: #3eb43d;">PSL</span>!}: [+ psl_votes +]%
 
-PiS: [+ pis_votes +]%
+{!<span style="color: #073a76;">PiS</span>!}: [+ pis_votes +]%
 
-Konfederacja: [+ konfederacja_votes +]%
+{!<span style="color: #122949;">Konfederacja</span>!}: [+ konfederacja_votes +]%
 
 Others: [+ other_votes +]%
 
