@@ -14,7 +14,7 @@ The mining and metals industry of the Ruhr region is beset by a wave of strikes 
 - @support_employers: Support the employers in their demands.
 - @balance: Try to strike a compromise between the sides.
 
-@support_conservatives
+@support_labor
 subtitle: This will alienate the bourgeoisie.
 on-arrival: conservatives_strength += 5; conservatives_dissent -= 5; progressives_dissent -= 5; workers_ko += 6*(1-dissent); coalition_dissent += 1; psl_relation -= 4; capital_strike_progress += 1 if psl_relation <= 30; capital_strike_progress += 1 if pensioners > 15; capital_strike_progress += 1 if pensioners > 24; labor_goal_completed += 1; inflation += 0.1; economic_growth -= 0.2
 
