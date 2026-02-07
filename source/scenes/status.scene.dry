@@ -80,10 +80,9 @@ Economic growth: [+ economic_growth_2 +]%
 = Inter-party Relations
 
 {!<span class="tooltip-text" style="color: #f8c013;" title="Polska 2050">PL2050</span>!}: [+ pl2050_relation : relationships +]
-{!
-[? if not lewica_name : <span class="tooltip-text" style="color: #e10914;" title="Nowa Lewica (SLD + Wiosna)">SLD + Wiosna</span> ?]
-[? if lewica_name : <span class="tooltip-text" style="color: #e10914;" title="Nowa Lewica (SLD + Wiosna)">[+ lewica_name +]</span> ?]: [+ lewica_relation : relationships +]
-!}
+
+{!<span class="tooltip-text" style="color: #e10914;" title="SLD + Spirng">SLD + Wiosna</span> !}: [+ lewica_relation : relationship +]
+
 {!<span class="tooltip-text" style="color: #3eb43d;" title="Polskie Stronnictwo Ludowe">PSL</span>!}: [+ psl_relation : relationships +]
 
 {!<span class="tooltip-text" style="color: #870f57;" title="Partia Razem">Razem</span>!}: [+ razem_relation : relationships +]

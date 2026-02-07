@@ -101,12 +101,12 @@ Q.moderate_plan_adopted = 0;
 // organizations
 
 // inter-party relations
-Q.pl2050_relation = 50;
-Q.razem_relation = 25;
-Q.lewica_relation = 60;
-Q.psl_relation = 35;
-Q.PiS_relation = 10;
-Q.Konfederacja_relation = 0;
+Q.pl2050_relation = 45;
+Q.razem_relation = 15;
+Q.lewica_relation = 40;
+Q.psl_relation = 60;
+Q.PiS_relation = 5;
+Q.Konfederacja_relation = 10;
 
 Q.razem_leader = "Zandberg";
 // alternative is the Conciliators as party leader
