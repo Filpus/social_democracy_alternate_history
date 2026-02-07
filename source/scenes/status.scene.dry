@@ -2,20 +2,15 @@ title: Status
 new-page: true
 is-special: true
 on-arrival: {!
-if (Q.pensioners) {
-    Q.pensioners_2 = Q.pensioners.toFixed(1);
-}
-if (Q.inflation) {
-    Q.inflation_2 = Q.inflation.toFixed(1);
-}
-Q.economic_growth_2 = '0';
-if (Q.economic_growth) {
-    Q.economic_growth_2 = Q.economic_growth.toFixed(1);
-}
-if (Q.lewica_name && Q.lewica_name != 0) {
-        Q.lewica_display = Q.lewica_name;
-    } else {
-        Q.lewica_display = "Lewica";
+    if (Q.pensioners) {
+        Q.pensioners_2 = Q.pensioners.toFixed(1);
+    }
+    if (Q.inflation) {
+        Q.inflation_2 = Q.inflation.toFixed(1);
+    }
+    Q.economic_growth_2 = '0';
+    if (Q.economic_growth) {
+        Q.economic_growth_2 = Q.economic_growth.toFixed(1);
     }
 !}
 
@@ -81,7 +76,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 {!<span class="tooltip-text" style="color: #f8c013;" title="Polska 2050">PL2050</span>!}: [+ pl2050_relation : relationships +]
 
-{!<span class="tooltip-text" style="color: #e10914;" title="SLD + Spirng">SLD + Wiosna</span> !}: [+ lewica_relation : relationship +]
+{!<span class="tooltip-text" style="color: #e10914;" title="SLD + Spirng">SLD + Wiosna</span>!}: [+ lewica_relation : relationship +]
 
 {!<span class="tooltip-text" style="color: #3eb43d;" title="Polskie Stronnictwo Ludowe">PSL</span>!}: [+ psl_relation : relationships +]
 

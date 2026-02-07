@@ -22,7 +22,7 @@ Q.started = 1;
 // time elapsed (in months)
 Q.time = 1;
 Q.year = 2021;
-Q.month = 16;
+Q.month = 6;
 // how many actions have been taken this month?
 Q.month_actions = 0;
 
@@ -42,8 +42,8 @@ Q.dues = 2;
 
 // the state of the party
 // overall dissent reduces every increase in party support.
-Q.dissent = 0.05;
-Q.dissent_percent = 5;
+Q.dissent = 0.25;
+Q.dissent_percent = 25;
 
 // factions
 Q.factions = ['progressives', 'pragmatists', 'conservatives', 'liberals'];
